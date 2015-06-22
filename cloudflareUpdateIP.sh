@@ -2,7 +2,7 @@
 ip=$1
 
 function addRecord {
-curl https://www.cloudflare.com/api_json.html 
+curl https://www.cloudflare.com/api_json.html
 -d 'a=rec_new' 
 -d 'tkn=yourAPIkey' 
 -d 'email=your@email.xom' 
