@@ -4,6 +4,9 @@ pushd /opt/seyren &> /dev/null
 # export environmet
 export GRAPHITE_URL="http://your-graphite-web-url"
 export SMTP_HOST="localhost"
+export SMTP_FROM="seyren@your-seyren-url"
+export SEYREN_URL="http://your-seyren-url"
+export PUSHOVER_APP_API_TOKEN="your-pushover-token"
 
 # setting locale
 export LANG=C
@@ -23,10 +26,6 @@ function berhenti {
     status=( $(for i in `ps ax |  awk '/seyren-1.3.0.jar/ && !/awk/ {print $1}'` ; do kill -9 $i; done ))
     echo "Seyren telah diberhentikan.."
 }
-
-export SMTP_FROM="seyren@your-seyren-url"
-export SEYREN_URL="http://your-seyren-url"
-export PUSHOVER_APP_API_TOKEN="your-pushover-token"
 
 clear
 
