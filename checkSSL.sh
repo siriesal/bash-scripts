@@ -1,11 +1,14 @@
 #!/bin/bash
+# riesal[at]gmail[dot]com
+# check SSL lifetime cert through bash script
 
 export LANG=C
 export LC_ALL=C
 export LC_MESSAGES=C
 
-GHOST="grphproxy.traveloka.com"
+GHOST="your-graphite-host"
 HOSTNAME="${COLLECTD_HOSTNAME:-`hostname -s`}"
+# https://github.com/riesal/python-netcat-client/blob/master/pync.py
 KIRIM="pync.py $GHOST 2003"
 
 function checkSSL {
@@ -26,19 +29,19 @@ fi
 
 clear
 
-tvlkev=`checkSSL traveloka.com`
-tvlkwld=`checkSSL tap.traveloka.com`
-tvstwld=`checkSSL tvasset.com &> /dev/null`
+bca=`checkSSL ibank.klikbca.com`
+mandiri=`checkSSL ib.bankmandiri.co.id`
+commbnk=`checkSSL commaccess.commbank.co.id &> /dev/null`
 
-echo "cert.traveloka.ev.remain $tvlkev $(date +%s)" | $KIRIM
-echo "cert.traveloka.nonev.remain $tvlkwld $(date +%s)" | $KIRIM
+echo "cert.$HOSTNAME.bca.remain $bca $(date +%s)" | $KIRIM
+echo "cert.$HOSTNAME.mandiri.remain $mandiri $(date +%s)" | $KIRIM
 
-echo "traveloka.com expires in $tvlkev days."
-echo "tap.traveloka.com expires in $tvlkwld days."
+echo "klikbca.com SSL cert expires in $bca days."
+echo "bankmandiri.co.id SSL cert expires in $mandiri days."
 
-if [[ $tvstwld -gt 0 ]]; then
-  echo "tvasset.com expires in $tvstwld days."
-  echo "cert.tvasset.nonev.remain $tvstwld $(date +%s)" | $KIRIM
+if [[ $commabnk -gt 0 ]]; then
+  echo "commbank.co.id SSL cert expires in $commbnk days."
+  echo "cert.$HOSTNAME.commbnk.remain $commbnk $(date +%s)" | $KIRIM
 else
-  echo -e "\x1b[0;31mPlease check tvasset.com SSL cert!\x1b[0m"
+  echo -e "\x1b[0;31mUnable connect to https://commbank.co.id !\x1b[0m"
 fi
