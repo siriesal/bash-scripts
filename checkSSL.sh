@@ -1,6 +1,6 @@
 #!/bin/bash
 # riesal[at]gmail[dot]com
-# check SSL lifetime cert through bash script
+# check SSL cert lifetime through bash script
 
 export LANG=C
 export LC_ALL=C
