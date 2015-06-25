@@ -6,7 +6,7 @@ num=$1 # or simply hostname
 ip=$2
 
 function addRecord {
-icurl https://www.cloudflare.com/api_json.html \
+curl https://www.cloudflare.com/api_json.html \
 -d 'a=rec_new' \
 -d 'tkn=yourAPIkey' \
 -d 'email=your@email.xom' \
