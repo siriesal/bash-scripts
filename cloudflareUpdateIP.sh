@@ -2,7 +2,7 @@
 # riesal@gmail.com
 # uneffective yet unoptimized bash script
 
-hostname=$1
+num=$1 # or simply hostname
 ip=$2
 
 function addRecord {
