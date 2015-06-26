@@ -1,5 +1,5 @@
 #!/bin/bash
-# riesal[at]gmail[dot]com
+# riesal[at]gmail[dot]com.
 # check SSL cert lifetime through bash script
 
 export LANG=C
