@@ -14,3 +14,4 @@ do
 done < "$input"
 
 awk '{print $2}' text.txt | cut -d'"' -f2 > $output
+rm text.txt
