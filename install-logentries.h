@@ -1,5 +1,8 @@
 #!/bin/sh
 
+# Logentries Agent Installer for Joyent SmartOS.
+# Tested with: SunOS who.intispace.com 5.11 joyent_20160609T214714Z i86pc i386 i86pc Solaris
+
 echo "Logentries Agent Installer for Joyent SmartOS\n"
 
 if [ ! -x "/opt/local/bin/python2.7" ]; then
