@@ -39,7 +39,7 @@ if [[ "$PROJECT" == "crdt" ]]; then
   PJRCT="CREDIT"
   le_installer
 elif [[ "$PROJECT" == "payment" ]]; then
-  PJRCT="CREDIT"
+  PJRCT="PAYMENT"
   le_installer
 else
   echo "Installation halted, please define the correct PROJECT!"
