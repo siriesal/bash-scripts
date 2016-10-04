@@ -9,7 +9,7 @@ PROJECT=$(echo $HOSTNAME | cut -d'-' -f1)
 
 function le_installer()
 {
-  le_acct_key="933984aa-ebc7-43a3-8552-77e1f018f650"
+  le_acct_key="your-account-key"
   le_follow_log="/opt/$PJRCT/capdeploy/current/log/production.log"
   le_log_name="production.log"
   le_log_type="ruby"
